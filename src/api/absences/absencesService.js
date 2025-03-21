@@ -87,9 +87,9 @@ export const rejectAbsence = async(id, reason) => {
                 'Content-Type': 'application/json', 'accept':'application/json',
                 'Authorization':'Bearer ' + localStorage.getItem('ACCESS_TOKEN')
             },
-            body: reason ? JSON.stringify({
-                reason: reason
-            }) : null
+            body:  JSON.stringify({
+                reason: reason||null
+            }) 
         })
     } catch (error) {
         console.error(error)
